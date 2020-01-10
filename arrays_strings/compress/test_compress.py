@@ -1,6 +1,22 @@
 from nose.tools import assert_equal
 
-
+class CompressString(object):
+    def compress(self, string):
+        if string is None or not string:
+            return string
+        else:
+            prev_char = ""
+            count = 0
+            for index, value in enumerate(string):
+                if prev_char != "" and value == prev_char[-2]:
+                    count += 1
+                    prev_char = prev_char.replace(prev_char[-2:], "")
+                    prev_char += value + str(count)
+                else:
+                    count = 1
+                    prev_char += value + " "
+            return prev_char.replace(" ", "") if len(prev_char) < len(string) else string
+        
 class TestCompress(object):
 
     def test_compress(self, func):
