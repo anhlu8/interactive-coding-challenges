@@ -1,5 +1,24 @@
 from nose.tools import assert_equal, assert_raises
 
+class Solution(object):
+    def fizz_buzz(self, val):
+        if val is None:
+            raise TypeError
+        elif val == 0:
+            raise ValueError
+        else:
+            result = []
+            for i in range(val):
+                if (i+1) % 3 == 0 and (i+1) % 5 == 0:
+                    result.append("FizzBuzz")
+                elif (i+1) % 3 == 0:
+                    result.append("Fizz")
+                elif (i+1) % 5 == 0:
+                    result.append("Buzz")
+                else:
+                    result.append(str(i+1))
+            print("this is result", result)
+            return result
 
 class TestFizzBuzz(object):
 
