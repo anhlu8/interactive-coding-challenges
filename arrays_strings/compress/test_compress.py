@@ -1,5 +1,7 @@
 from nose.tools import assert_equal
 
+# SOLVED
+
 class CompressString(object):
     def compress(self, string):
         if string is None or not string:

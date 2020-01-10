@@ -1,5 +1,7 @@
 from nose.tools import assert_equal, assert_raises
 
+# SOLVED
+
 class Solution(object):
     def fizz_buzz(self, val):
         if val is None:
